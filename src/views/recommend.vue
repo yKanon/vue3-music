@@ -5,7 +5,13 @@
 </template>
 
 <script>
+import { getRecommend } from '@/service/recommend'
+
 export default {
+  async mounted () {
+    const res = await getRecommend()
+    console.log('res', res)
+  },
   setup () {
     return {}
   }
