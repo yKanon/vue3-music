@@ -3,7 +3,7 @@ import MusicList from '@/components/music-list/MusicList'
 import storage from 'good-storage'
 import { processSongs } from '@/service/song'
 
-export default function createDetailComponent(name, key, fetch) {
+export default function createDetailComponent (name, key, fetch) {
   return defineComponent({
     name,
     components: {
@@ -12,37 +12,40 @@ export default function createDetailComponent(name, key, fetch) {
     props: {
       data: Object
     },
-    data() {
+    data () {
       return {
         songs: [],
         loading: false
       }
     },
     computed: {
-      computedData() {
+      computedData () {
         let ret = null
         const data = this.data
         if (data) {
           ret = data
         } else {
           const cachedData = storage.session.get(key)
-          if (cachedData && (cachedData.mid || cachedData.id + '') === this.$route.params.id) {
+          if (
+            cachedData &&
+            (cachedData.mid || cachedData.id + '') === this.$route.params.id
+          ) {
             ret = cachedData
           }
         }
         return ret
       },
       // 封面图
-      pic() {
+      pic () {
         const data = this.computedData
         return data && data.pic
       },
-      title() {
+      title () {
         const data = this.computedData
         return data && (data.name || data.title)
       }
     },
-    async created() {
+    async created () {
       const computedData = this.computedData
       if (!computedData) {
         const path = this.$route.matched[0].path

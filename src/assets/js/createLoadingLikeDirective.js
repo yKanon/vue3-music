@@ -6,7 +6,7 @@ const createLoadingLikeDirective = Component => {
 
   // 通过指令插入的loading需要保证被挂载的元素时一个非static元素（如果是需要添加一个定位属性）
   // 因为loading组件的实现是一个定位元素
-  function append(el) {
+  function append (el) {
     const name = Component.name
     const style = getComputedStyle(el)
     if (!['absolute', 'fixed', 'relative'].includes(style.position)) {
@@ -16,14 +16,14 @@ const createLoadingLikeDirective = Component => {
     el.appendChild(el[name].instance.$el)
   }
 
-  function remove(el) {
+  function remove (el) {
     const name = Component.name
     removeClass(el, relativeCls)
     el.removeChild(el[name].instance.$el)
   }
 
   return {
-    mounted(el, binding) {
+    mounted (el, binding) {
       const app = createApp(Component)
       const instance = app.mount(document.createElement('div'))
       const name = Component.name
@@ -42,7 +42,7 @@ const createLoadingLikeDirective = Component => {
         append(el)
       }
     },
-    updated(el, binding) {
+    updated (el, binding) {
       const name = Component.name
       const title = binding.arg
       if (typeof title !== 'undefined') {
