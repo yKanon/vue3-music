@@ -1,4 +1,5 @@
 const registerRouter = require("./backend/router");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   css: {
@@ -15,5 +16,18 @@ module.exports = {
     before(app) {
       registerRouter(app);
     }
+  },
+  chainWebpack: config => {
+    config
+      .plugin("bundle")
+      .use(
+        new BundleAnalyzerPlugin({
+          analyzerMode: "disabled",
+          generateStatsFile: true,
+          statsOptions: {
+            source: false
+          }
+        })
+      );
   }
 };
