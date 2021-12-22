@@ -10,8 +10,8 @@
 
 <script>
 export default {
-  name: 'MHeader'
-}
+  name: "MHeader"
+};
 </script>
 
 <style lang="scss" scoped>

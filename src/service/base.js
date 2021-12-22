@@ -1,9 +1,9 @@
-import axios from 'axios'
+import axios from "axios";
 
-const baseURL = '/'
-const ERROR_OK = 0
+const baseURL = "/";
+const ERROR_OK = 0;
 
-axios.defaults.baseURL = baseURL
+axios.defaults.baseURL = baseURL;
 
 export const get = (url, params) => {
   return axios
@@ -11,12 +11,12 @@ export const get = (url, params) => {
       params
     })
     .then(res => {
-      const serverData = res.data
+      const serverData = res.data;
       if (serverData.code === ERROR_OK) {
-        return serverData.result
+        return serverData.result;
       }
     })
     .catch(err => {
-      console.log(err)
-    })
-}
+      console.log(err);
+    });
+};
