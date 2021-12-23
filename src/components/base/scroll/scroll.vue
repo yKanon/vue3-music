@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import useScroll from "./use-scroll";
+import { defineComponent, ref } from 'vue'
+import useScroll from './use-scroll'
 
 export default defineComponent({
-  name: "Scroll",
-  emits: ["scroll"],
+  name: 'Scroll',
+  emits: ['scroll'],
   props: {
     click: {
       type: Boolean,
@@ -23,13 +23,13 @@ export default defineComponent({
   },
 
   setup(props, { emit }) {
-    const rootRef = ref(null);
-    const scroll = useScroll();
+    const rootRef = ref(null)
+    const scroll = useScroll()
 
     return {
       scroll,
       rootRef
-    };
+    }
   }
-});
+})
 </script>

@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import { getRecommend } from "@/service/recommend";
-import Slider from "@/components/base/slider/slider";
+import { defineComponent } from 'vue'
+import { getRecommend } from '@/service/recommend'
+import Slider from '@/components/base/slider/slider'
 
 export default defineComponent({
   components: {
@@ -42,26 +42,26 @@ export default defineComponent({
       loading: false,
       sliders: [],
       albums: []
-    };
+    }
   },
   async mounted() {
-    const recommend = await getRecommend();
+    const recommend = await getRecommend()
 
-    this.sliders = recommend.sliders;
-    this.albums = recommend.albums;
-    console.log("this.albums =: ", this.albums);
+    this.sliders = recommend.sliders
+    this.albums = recommend.albums
+    console.log('this.albums =: ', this.albums)
   },
   methods: {
     selectItem(album) {
-      this.selectedAlbum = album;
-      this.cacheSinger(album);
-      this.$router.push("/recommend/" + album.id);
+      this.selectedAlbum = album
+      this.cacheSinger(album)
+      this.$router.push('/recommend/' + album.id)
     }
     // cacheSinger (album) {
     //   storage.session.set(ALBUM_KEY, album)
     // }
   }
-});
+})
 </script>
 
 <style lang="scss" scoped>

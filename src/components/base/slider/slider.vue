@@ -20,29 +20,29 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import useSlider from "./use-slider";
+import { defineComponent, ref } from 'vue'
+import useSlider from './use-slider'
 
 export default defineComponent({
-  name: "Slider",
+  name: 'Slider',
   props: {
     sliders: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     }
   },
   setup() {
-    const rootRef = ref(null);
-    const { currentPageIndex } = useSlider(rootRef);
+    const rootRef = ref(null)
+    const { currentPageIndex } = useSlider(rootRef)
 
     return {
       rootRef,
       currentPageIndex
-    };
+    }
   }
-});
+})
 </script>
 
 <style lang="scss" scoped>

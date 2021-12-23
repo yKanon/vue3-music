@@ -1,8 +1,8 @@
-import { get } from "@/service/base";
+import { get } from '@/service/base'
 
-export const getRecommend = () => get("/api/getRecommend");
+export const getRecommend = () => get('/api/getRecommend')
 
 export const getAlbum = album =>
-  get("/api/getAlbum", {
+  get('/api/getAlbum', {
     id: album.id
-  });
+  })
