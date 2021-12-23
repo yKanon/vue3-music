@@ -10,7 +10,7 @@
     "bundle-report": "webpack-bundle-analyzer --port 8123 dist/stats.json"
   },
   "husky": {
-    "pre-commit": "ling-staged && compress",
+    "pre-commit": "yarn lint",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "post-commit": "re-commit"
   },
