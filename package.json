@@ -9,11 +9,6 @@
     "prepare": "husky install",
     "bundle-report": "webpack-bundle-analyzer --port 8123 dist/stats.json"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
   "dependencies": {
     "@better-scroll/core": "^2.3.1",
     "@better-scroll/slide": "^2.3.1",
