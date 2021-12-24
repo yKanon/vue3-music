@@ -10,34 +10,34 @@
 
 <script>
 export default {
-  name: 'Tab',
+  name: "Tab",
   data() {
     return {
       tabs: [
         {
-          name: '推荐',
-          path: '/recommend'
+          name: "推荐",
+          path: "/recommend"
         },
         {
-          name: '歌手',
-          path: '/singer'
+          name: "歌手",
+          path: "/singer"
         },
         {
-          name: '排行',
-          path: '/top-list'
+          name: "排行",
+          path: "/top-list"
         },
         {
-          name: '搜索',
-          path: '/search'
+          name: "搜索",
+          path: "/search"
         }
       ]
-    }
+    };
   },
 
   setup() {
-    return {}
+    return {};
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
